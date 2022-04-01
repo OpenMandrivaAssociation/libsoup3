@@ -27,6 +27,7 @@ BuildRequires:	cmake
 BuildRequires:  krb5
 BuildRequires:	curl
 BuildRequires:  pkgconfig(libcurl)
+BuildRequires:  pkgconfig(gnutls)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(glib-2.0) >= 2.27.5
 BuildRequires:	pkgconfig(gobject-2.0) >= 2.27.5
