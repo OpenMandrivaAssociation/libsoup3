@@ -124,7 +124,7 @@ This package contains the files necessary to develop applications with soup.
 	--with-apache-module-dir=/etc/httpd/*modules \
 %endif
 %if %{build_doc}
-	-Ddoc=true
+	-Dgtk_doc=true
 %endif
 
 %meson_build
