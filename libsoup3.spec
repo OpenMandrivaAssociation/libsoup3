@@ -121,6 +121,7 @@ This package contains the files necessary to develop applications with soup.
 	-Dntlm=disabled \
 	-Dntlm_auth=disabled \
 	-Dtls_check=false \
+        -Dtests=false \
 %if %build_check
 	--with-apache-module-dir=/etc/httpd/*modules \
 %endif
