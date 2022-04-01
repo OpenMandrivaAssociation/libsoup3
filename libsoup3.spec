@@ -4,9 +4,7 @@
 %define api	3.0
 %define major	0
 %define libname %mklibname soup %{api} %{major}
-%define libgnome %mklibname soup-gnome %{api} %{major}
 %define girname %mklibname soup-gir %{api}
-%define girgnome %mklibname soupgnome-gir %{api}
 %define devname %mklibname -d soup %{api} 
 
 %define build_check 0
@@ -76,16 +74,6 @@ servicing SOAP requests, and a WSDL (Web Service Definition Language) to C
 compiler which generates client stubs and server skeletons for easily calling
 and implementing SOAP methods.
 
-This package contains a library used by soup.
-
-%package -n %{libgnome}
-Summary:	Libraries for soup
-Group:		System/Libraries
-Conflicts:	%{_lib}soup-2.4_1 < 2.43.1-2
-
-%description -n %{libgnome}
-This package contains a library used by soup.
-
 %package -n %{girname}
 Summary:	GObject Introspection interface library for libsoup
 Group:		System/Libraries
@@ -93,22 +81,12 @@ Group:		System/Libraries
 %description -n %{girname}
 GObject Introspection interface library for libsoup.
 
-%package -n %{girgnome}
-Summary:	GObject Introspection interface library for libsoup
-Group:		System/Libraries
-Conflicts:	%{_lib}soup-gir2.4 < 2.43.1-2
-
-%description -n %{girgnome}
-GObject Introspection interface library for libsoup.
-
 %package -n %{devname}
 Summary:	Development libraries, header files and utilities for soup
 Group:		Development/GNOME and GTK+
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
-Requires:	%{libgnome} = %{version}-%{release}
 Requires:	%{girname} = %{version}-%{release}
-Requires:	%{girgnome} = %{version}-%{release}
 Obsoletes:	%{_lib}soup-2.4-devel < 2.43.1-2
 
 %description -n %{devname}
@@ -146,21 +124,15 @@ make check
 %files -n %{libname} -f %{oname}-%{api}.lang
 %{_libdir}/libsoup-%{api}.so.%{major}*
 
-%files -n %{libgnome}
-#{_libdir}/libsoup-gnome-%{api}.so.%{major}*
-
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Soup-%{api}.typelib
 
-%files -n %{girgnome}
-#{_libdir}/girepository-1.0/SoupGNOME-%{api}.typelib
-
 %files -n %{devname}
 %doc README COPYING AUTHORS NEWS
-#{_datadir}/gtk-doc/html/%{name}-%api
+%doc %{_datadir}/gtk-doc/html/%{Oname}-%api/
 %{_datadir}/gir-1.0/Soup-%{api}.gir
-#{_datadir}/gir-1.0/SoupGNOME-%{api}.gir
-#{_datadir}/vala/vapi/libsoup-2.4.*
+%{_datadir}/vala/vapi/libsoup-3.0.deps
+%{_datadir}/vala/vapi/libsoup-3.0.vapi
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
