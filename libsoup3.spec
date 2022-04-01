@@ -136,7 +136,7 @@ This package contains the files necessary to develop applications with soup.
 
 %install
 %meson_install
-%find_lang %{name}
+%find_lang %{oname}
 
 %if %{build_check}
 %check
