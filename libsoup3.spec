@@ -136,14 +136,14 @@ This package contains the files necessary to develop applications with soup.
 
 %install
 %meson_install
-%find_lang %{oname}
+%find_lang %{oname}-%{api}
 
 %if %{build_check}
 %check
 make check
 %endif
 
-%files -n %{libname} -f %{oname}.lang
+%files -n %{libname} -f %{oname}-%{api}.lang
 %{_libdir}/libsoup-%{api}.so.%{major}*
 
 %files -n %{libgnome}
