@@ -37,6 +37,7 @@ BuildRequires:	pkgconfig(krb5)
 BuildRequires:	krb5-devel
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libpsl)
+BuildRequires:	pkgconfig(libnghttp2)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
