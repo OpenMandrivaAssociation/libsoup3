@@ -1,7 +1,8 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
+%define oname	libsoup
 
-%define api	2.4
-%define major	1
+%define api	3.0
+%define major	0
 %define libname %mklibname soup %{api} %{major}
 %define libgnome %mklibname soup-gnome %{api} %{major}
 %define girname %mklibname soup-gir %{api}
@@ -12,13 +13,13 @@
 %define build_doc 1
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
-Name:		libsoup
+Name:		libsoup3
 Version:	3.0.6
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.gnome.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{oname}-%{version}.tar.xz
 
 BuildRequires:	meson
 BuildRequires:	intltool
@@ -112,8 +113,7 @@ Obsoletes:	%{_lib}soup-2.4-devel < 2.43.1-2
 This package contains the files necessary to develop applications with soup.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -n %{oname}-%{version} -p1
 
 %build
 %meson \
@@ -155,7 +155,7 @@ make check
 #{_datadir}/gtk-doc/html/%{name}-%api
 %{_datadir}/gir-1.0/Soup-%{api}.gir
 %{_datadir}/gir-1.0/SoupGNOME-%{api}.gir
-%{_datadir}/vala/vapi/libsoup-2.4.*
+#{_datadir}/vala/vapi/libsoup-2.4.*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
