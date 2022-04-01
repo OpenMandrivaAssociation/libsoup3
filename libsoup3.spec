@@ -147,7 +147,7 @@ make check
 %{_libdir}/libsoup-%{api}.so.%{major}*
 
 %files -n %{libgnome}
-%{_libdir}/libsoup-gnome-%{api}.so.%{major}*
+#{_libdir}/libsoup-gnome-%{api}.so.%{major}*
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Soup-%{api}.typelib
