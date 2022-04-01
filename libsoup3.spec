@@ -143,7 +143,7 @@ This package contains the files necessary to develop applications with soup.
 make check
 %endif
 
-%files -n %{libname} -f %{name}.lang
+%files -n %{libname} -f %{oname}.lang
 %{_libdir}/libsoup-%{api}.so.%{major}*
 
 %files -n %{libgnome}
