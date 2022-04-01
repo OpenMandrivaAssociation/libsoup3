@@ -153,7 +153,7 @@ make check
 %{_libdir}/girepository-1.0/Soup-%{api}.typelib
 
 %files -n %{girgnome}
-%{_libdir}/girepository-1.0/SoupGNOME-%{api}.typelib
+#{_libdir}/girepository-1.0/SoupGNOME-%{api}.typelib
 
 %files -n %{devname}
 %doc README COPYING AUTHORS NEWS
