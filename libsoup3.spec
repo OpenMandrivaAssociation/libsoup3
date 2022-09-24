@@ -8,7 +8,7 @@
 %define devname %mklibname -d soup %{api} 
 
 %define build_check 0
-%define build_doc 0
+%define build_doc 1
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup3
@@ -42,7 +42,7 @@ BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
 BuildRequires:	pkgconfig(sysprof-capture-4)
 %if %{build_doc}
-BuildRequires:	gtk-doc
+BuildRequires:	gi-docgen
 %endif
 %if %build_check
 #gw for running checks
@@ -101,13 +101,7 @@ This package contains the files necessary to develop applications with soup.
 	-Dntlm_auth=disabled \
 	-Dtls_check=false \
         -Dtests=false \
-        -Dautobahn=disabled \
-%if %build_check
-	--with-apache-module-dir=/etc/httpd/*modules \
-%endif
-%if %{build_doc}
-	-Dgtk_doc=true
-%endif
+        -Dautobahn=disabled
 
 %meson_build
 
