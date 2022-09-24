@@ -8,7 +8,7 @@
 %define devname %mklibname -d soup %{api} 
 
 %define build_check 0
-%define build_doc 1
+%define build_doc 0
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup3
@@ -101,7 +101,6 @@ This package contains the files necessary to develop applications with soup.
 	-Dntlm_auth=disabled \
 	-Dtls_check=false \
         -Dtests=false \
-        -Dhttp2_tests=disabled \
         -Dautobahn=disabled \
 %if %build_check
 	--with-apache-module-dir=/etc/httpd/*modules \
