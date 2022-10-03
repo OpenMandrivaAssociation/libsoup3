@@ -12,7 +12,7 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup3
-Version:	3.0.7
+Version:	3.2.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -42,7 +42,7 @@ BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
 BuildRequires:	pkgconfig(sysprof-capture-4)
 %if %{build_doc}
-BuildRequires:	gtk-doc
+BuildRequires:	gi-docgen
 %endif
 %if %build_check
 #gw for running checks
@@ -101,14 +101,7 @@ This package contains the files necessary to develop applications with soup.
 	-Dntlm_auth=disabled \
 	-Dtls_check=false \
         -Dtests=false \
-        -Dhttp2_tests=disabled \
-        -Dautobahn=disabled \
-%if %build_check
-	--with-apache-module-dir=/etc/httpd/*modules \
-%endif
-%if %{build_doc}
-	-Dgtk_doc=true
-%endif
+        -Dautobahn=disabled
 
 %meson_build
 
@@ -129,7 +122,7 @@ make check
 
 %files -n %{devname}
 %doc README COPYING AUTHORS NEWS
-%doc %{_datadir}/gtk-doc/html/%{oname}-%api/
+%doc %{_datadir}/doc/libsoup-3.0/
 %{_datadir}/gir-1.0/Soup-%{api}.gir
 %{_datadir}/vala/vapi/libsoup-3.0.deps
 %{_datadir}/vala/vapi/libsoup-3.0.vapi
