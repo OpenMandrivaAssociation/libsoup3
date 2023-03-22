@@ -12,12 +12,12 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup3
-Version:	3.2.2
+Version:	3.4.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://www.gnome.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{oname}-%{version}.tar.xz
+Url:		https://www.gnome.org/
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/libsoup/%{url_ver}/%{oname}-%{version}.tar.xz
 
 BuildRequires:	meson
 BuildRequires:	intltool
