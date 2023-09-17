@@ -13,7 +13,7 @@
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup3
 Version:	3.4.3
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://www.gnome.org/
@@ -40,7 +40,7 @@ BuildRequires:	pkgconfig(libnghttp2)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(libbrotlidec)
-BuildRequires:	pkgconfig(sysprof-capture-4)
+BuildRequires:	lib64sysprof-devel
 %if %{build_doc}
 BuildRequires:	gi-docgen
 %endif
