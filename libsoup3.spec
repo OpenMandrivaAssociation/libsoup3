@@ -101,7 +101,8 @@ This package contains the files necessary to develop applications with soup.
 	-Dntlm_auth=disabled \
 	-Dtls_check=false \
         -Dtests=false \
-        -Dautobahn=disabled
+        -Dautobahn=disabled \
+	-Dlibnbd=disabled
 
 %meson_build
 
