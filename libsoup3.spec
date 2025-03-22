@@ -12,8 +12,8 @@
 
 Summary:	SOAP (Simple Object Access Protocol) implementation
 Name:		libsoup3
-Version:	3.6.4
-Release:	2
+Version:	3.6.5
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://www.gnome.org/
